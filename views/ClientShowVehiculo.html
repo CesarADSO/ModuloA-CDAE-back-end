@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Vechículo - AutoMarket</title>
+    <link rel="stylesheet" href="../assets/css/master.css">
+</head>
+<body>
+    <main class="show concesionaria dashboard cliente">
+        <header>
+            <h2>Consultar Vehículo</h2>
+            <a href="ClientDashboard.html" class="back"></a>
+            <a href="index.html" class="close"></a>
+        </header>
+        <figure class="photo-preview slide">
+            <img src="../imgs/Touring.jpg" alt="">
+            <img src="../imgs/Onix.jpg" alt="">
+            <img src="../imgs/sportage.jpg" alt="">
+        </figure>
+        <div class="cont-details">
+            <div class="cont-veh">
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Concesionario:</div>
+                        <p>CASA TORO</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Marca:</div>
+                        <p>Kia</p>
+                    </div>
+                </article>
+
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Modelo:</div>
+                        <p>Sportage EX</p>
+                    </div>
+                </article>
+
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Precio:</div>
+                        <p> $ 88500000</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Año:</div>
+                        <p> 2020</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Ciudad:</div>
+                        <p> Bogotá</p>
+                    </div>
+                </article>
+
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Kilometraje:</div>
+                        <p> 12000 Km</p>
+                    </div>
+                </article>
+                <br>
+                <hr>
+                <br>
+                <h3 class="datos-c">AGENDAR CITA:</h3>
+                <form action="">
+                    <p>Fecha:</p>
+                    <input type="date" class="time">
+                    <p>Hora</p>
+                    <input type="time" class="time" >
+                    <button class="btn-home">Agendar</button>
+                </form>
+
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        const images = document.querySelectorAll('.photo-preview img');
+        let current = 0;
+
+        // Inicializar la primera imagen como activa
+        images[current].classList.add('active');
+
+        setInterval(() => {
+            // Quitar clase activa de la imagen actual
+            images[current].classList.remove('active');
+
+            // Calcular la siguiente imagen
+            current = (current + 1) % images.length;
+
+            // Agregar clase activa a la nueva imagen
+            images[current].classList.add('active');
+        }, 4000);
+    </script>
+
+
+</body>
+</html>

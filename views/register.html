@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro || AutoMarket</title>
+    <link rel="stylesheet" href="../assets/css/master.css">
+</head>
+
+<body>
+    <main class="login register" id="home">
+        <div class="cont-new-register">
+        <a href="index.html"><img src="../imgs/logo.png" class="logo" alt=""></a>
+        <h2>REGISTRARSE</h2>
+        <p>Ingresa Tus Datos y Crea una Cuenta <br> Recuerda elegir tu rol.</p> <br>
+        <form action="login.html">
+            <input type="text" placeholder="Nombres">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Clave">
+
+            <div class="select">
+                <select required>
+                     <option value="" disabled selected hidden>Seleccione Rol</option>
+                    <option value="1">Cliente</option>
+                    <option value="2">Concesionaria</option>
+                </select>
+            </div>
+            <div class="logo-form">
+                <p>Logo:</p>
+                <input type="file" accept=".jpg, .png, .jpeg, .svg">
+            </div>
+            
+            <button>Crear Mi Cuenta</button>
+        </form>
+        </div>
+        
+    </main>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectRol = document.querySelector("select");
+    const logoForm = document.querySelector(".logo-form");
+
+    // Ocultar por defecto
+    logoForm.style.display = "none";
+
+    // Evento al cambiar el valor del select
+    selectRol.addEventListener("change", function () {
+      if (selectRol.value === "2") {
+        logoForm.style.display = "block";
+      } else {
+        logoForm.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>
