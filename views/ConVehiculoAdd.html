@@ -16,15 +16,15 @@
             <a href="ConVehiculos.html" class="back"></a>
             <a href="index.html" class="close"></a>
         </header>
-        <form>
+        <form action="../controllers/agregarVehiculo.php" method="post" enctype="multipart/form-data">
             
-            <input type="text" placeholder="Marca...">
-            <input type="text" placeholder="Modelo...">
-            <input type="number" placeholder="Año...">
-            <input type="number" placeholder="Kilometraje ...">
-            <input type="number" placeholder="Precio ...">
+            <input type="text" name="marca" placeholder="Marca...">
+            <input type="text" name="modelo" placeholder="Modelo...">
+            <input type="number" name="anio" placeholder="Año...">
+            <input type="number" name="Kilometraje" placeholder="Kilometraje ...">
+            <input type="number" name="precio" placeholder="Precio ...">
             <div class="select">
-                <select>
+                <select name="ciudad">
                     <option value="" disabled selected hidden>Ciudad...</option>
                     <option value="Barranquilla">Barranquilla</option>
                     <option value="Bogotá">Bogotá</option>
@@ -36,13 +36,13 @@
             </div>
             
             <p>Foto Destacada:</p>
-            <input type="file" class="upload" aria-describedby="Foto Vehiculo">
+            <input type="file" name="fotoPrimaria" class="upload" aria-describedby="Foto Vehiculo">
             <p>Foto Secundaria:</p>
-            <input type="file" class="upload" aria-describedby="Foto Vehiculo">
+            <input type="file" name="fotoSecundaria" class="upload" aria-describedby="Foto Vehiculo">
             <p>Foto Terciaria:</p>
-            <input type="file" class="upload" aria-describedby="Foto Vehiculo">
+            <input type="file" name="fotoTerciaria" class="upload" aria-describedby="Foto Vehiculo">
             
-            <button class="btn-home">Guardar</button>
+            <button type="submit" class="btn-home">Guardar</button>
         </form>
     </main>
 </body>
