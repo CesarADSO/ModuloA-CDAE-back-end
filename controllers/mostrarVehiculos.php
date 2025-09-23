@@ -25,7 +25,7 @@
                     <div class="controls">
                         
                         <a href="ConVehiculoEdit.html" class="edit"></a>
-                        <a href="#" class="delete"></a>
+                        <a href="../controllers/eliminarVehiculo.php?idVehiculo='.$f['id'].'" class="delete"></a>
                     </div>
                 </td>
             </tr>

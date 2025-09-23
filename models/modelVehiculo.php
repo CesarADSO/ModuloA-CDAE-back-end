@@ -1,7 +1,9 @@
 <?php
 
-class Vehiculo {
-    public function registrarVehiculo ($idConcesionaria, $marca, $modelo, $anio, $kilometraje, $precio, $ciudad, $ruta_foto, $ruta_foto2, $ruta_foto3) {
+class Vehiculo
+{
+    public function registrarVehiculo($idConcesionaria, $marca, $modelo, $anio, $kilometraje, $precio, $ciudad, $ruta_foto, $ruta_foto2, $ruta_foto3)
+    {
         // CREAMOS EL OBJETO DE LA CONEXIÓN
         $objetoConexion = new Conexion();
         $conexion = $objetoConexion->get_conexion();
@@ -20,7 +22,8 @@ class Vehiculo {
     }
 
 
-    public function consultarVehiculos () {
+    public function consultarVehiculos()
+    {
         // CREAMOS EL OBJETO DE LA CONEXIÓN
         $objetoConexion = new Conexion();
         $conexion = $objetoConexion->get_conexion();
@@ -34,17 +37,29 @@ class Vehiculo {
         $resultado->execute();
 
         //AGREGAMOS UN BUCLE WHILE PARA PODER CONVERTIR ESA CADENA DE INFORMACION EN UN ARREGLO DE DATOS QUE PODAMOS MANIPULAR GRACIAS AL FETCH
-        while ($dato = $resultado-> fetch()) {
+        while ($dato = $resultado->fetch()) {
             $f[] = $dato;
         }
         // RETORNAMOS $f
         return $f;
     }
+
+
+    public function eliminarVehiculo($id_vh) {
+        // CREAMOS EL OBJETO DE LA CONEXIÓN
+        $objetoConexion = new Conexion();
+        $conexion = $objetoConexion->get_conexion();
+
+        // DEFINIMOS EN UNA VARIABLE LA CONSULTA SQL A EJECUTAR
+        $eliminar = "DELETE FROM vehiculos WHERE id = $id_vh";
+
+        // PREPARAMOS LA ACCIÓN A EJEUCUTAR Y LA EJECUTAMOS
+        $resultado = $conexion->prepare($eliminar);
+        $resultado->execute();
+
+        // NOTIFICAMOS Y REDIRECCIONAMOS A LA INTERFAZ
+        echo '<script>alert("Vehiculo Eliminado Correctamente")</script>';
+        echo '<script>location.href="../views/conVehiculos.php"</script>';
+
+    }
 };
-
-
-
-
-
-
-?>
