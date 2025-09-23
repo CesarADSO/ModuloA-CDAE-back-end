@@ -62,4 +62,25 @@ class Vehiculo
         echo '<script>location.href="../views/conVehiculos.php"</script>';
 
     }
+
+    public function consultarVehiculo ($id_vh) {
+        // CREAMOS EL OBJETO DE LA CONEXIÓN
+        $objetoConexion = new Conexion();
+        $conexion = $objetoConexion->get_conexion();
+
+        // DEFINIMOS EN UNA VARIABLE LA CONSULTA SQL A EJECUTAR
+
+        $consultar = "SELECT * FROM vehiculos WHERE id = $id_vh";
+
+        // PREPARAMOS LA ACCIÓN A EJECUTAR Y LA EJECUTAMOS 
+        $resultado = $conexion->prepare($consultar);
+        $resultado->execute();
+
+        //AGREGAMOS UN BUCLE WHILE PARA PODER CONVERTIR ESA CADENA DE INFORMACION EN UN ARREGLO DE DATOS QUE PODAMOS MANIPULAR GRACIAS AL FETCH
+        while ($dato = $resultado->fetch()) {
+            $f[] = $dato;
+        }
+        // RETORNAMOS $f
+        return $f;
+    }
 };
