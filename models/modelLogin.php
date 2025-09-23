@@ -67,7 +67,7 @@ class Login
                         $_SESSION['autenticado'] = "SI";
 
                         echo '<script>alert("Bievenida ' . $rolTexto . ' ' . $f['nombre'] . '")</script>';
-                        echo '<script>location.href="../views/conDashboard.html"</script>';
+                        echo '<script>location.href="../views/conDashboard.php"</script>';
                     } else {
                         echo '<script>alert("La contraseña ingresada no es la correcta")</script>';
                         echo '<script>location.href="../views/login.html"</script>';

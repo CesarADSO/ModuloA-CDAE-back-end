@@ -1,3 +1,13 @@
+
+<?php
+
+require_once("../controllers/seguridad.php");
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +23,7 @@
     <main class="dashboard concesionaria">
         <header>
             <h2>Panel de Administración</h2>
-            <a href="index.html" class="close"></a>
+            <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         <a href="ConVehiculos.html" class="btn-home inmuebles">Gestionar Vehículos</a>
         <a href="ConSolicitudes.html" class="btn-home solicitudes">Ver Solicitudes</a>
