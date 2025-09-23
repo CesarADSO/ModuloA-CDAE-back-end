@@ -1,7 +1,7 @@
 <?php
 
 // IMPORTAMOS LAS DEPENDENCIAS NECESARIAS
-
+session_start();
 require_once("../models/conexion.php");
 require_once("../models/modelVehiculo.php");
 
