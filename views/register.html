@@ -15,13 +15,13 @@
         <a href="index.html"><img src="../imgs/logo.png" class="logo" alt=""></a>
         <h2>REGISTRARSE</h2>
         <p>Ingresa Tus Datos y Crea una Cuenta <br> Recuerda elegir tu rol.</p> <br>
-        <form action="login.html">
-            <input type="text" placeholder="Nombres">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Clave">
+        <form action="registerUser.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="nombres" placeholder="Nombres">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="clave" placeholder="Clave">
 
             <div class="select">
-                <select required>
+                <select required name="rol">
                      <option value="" disabled selected hidden>Seleccione Rol</option>
                     <option value="1">Cliente</option>
                     <option value="2">Concesionaria</option>
@@ -29,10 +29,10 @@
             </div>
             <div class="logo-form">
                 <p>Logo:</p>
-                <input type="file" accept=".jpg, .png, .jpeg, .svg">
+                <input type="file" name="foto" accept=".jpg, .png, .jpeg, .svg">
             </div>
             
-            <button>Crear Mi Cuenta</button>
+            <button type="submit">Crear Mi Cuenta</button>
         </form>
         </div>
         
