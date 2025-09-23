@@ -83,4 +83,22 @@ class Vehiculo
         // RETORNAMOS $f
         return $f;
     }
+
+    public function actualizarVehiculo ($id, $marca, $modelo, $anio, $kilometraje, $precio, $ciudad) {
+        // CREAMOS EL OBJETO DE LA CONEXION
+        $objetoConexion = new Conexion();
+        $conexion = $objetoConexion->get_conexion();
+
+
+        // DEFINIMOS EN UNA VARIABLE LA CONSULTA SQL A EJECUTAR
+        $actualizar = "UPDATE vehiculos SET marca = '$marca', modelo = '$modelo', anio = $anio, kilometraje = $kilometraje, precio = $precio, ciudad = '$ciudad' WHERE id = $id";
+
+        // PREPARAMOS LA ACCIÓN A EJECUTAR Y LA EJECUTAMOS
+        $resultado = $conexion->prepare($actualizar);
+        $resultado->execute();
+
+        // NOTIFICAMOS Y REDIRECCIONAMOS
+        echo '<script>alert("Vehiculo Actualizado Correctamente")</script>';
+        echo '<script>location.href="../views/conVehiculos.php"</script>';
+    }
 };

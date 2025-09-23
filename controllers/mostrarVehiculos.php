@@ -45,6 +45,7 @@ function cargarVehiculo()
 
     foreach ($resultado as $f) {
         echo '
+        <form action="../controllers/actualizarVehiculo.php" method="post">
             <input type="hidden" name="id" placeholder="Marca..." value="'.$f['id'].'">
             <input type="text" name="marca" placeholder="Marca..." value="'.$f['marca'].'">
             <input type="text" name="modelo" placeholder="Modelo..." value="'.$f['modelo'].'">
@@ -65,7 +66,7 @@ function cargarVehiculo()
             
             <button class="btn-home" type="submit">Modificar</button>
 
-
+        </form>
         ';
     }
 }

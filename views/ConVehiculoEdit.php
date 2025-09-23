@@ -28,14 +28,14 @@ require_once("../controllers/seguridad.php");
             <a href="ConVehiculos.php" class="back"></a>
             <a href="index.html" class="close"></a>
         </header>
-        <form>
+        
             
             <?php
             
                 cargarVehiculo();
             
             ?>
-        </form>
+        
     </main>
 </body>
 </html>
