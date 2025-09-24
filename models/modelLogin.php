@@ -25,24 +25,25 @@ class Login
                 if ($f = $resultado->fetch()) {
 
                     // VALIDAMOS LA CLAVE 
-                    if ($f['clave'] == $clave) {
+                    if (password_verify($clave, $f['clave'])) {
 
                         // SE INICIA SESIÓN
                         session_start();
 
                         //SE CREAN VARIABLES GLOBALES O DE SESIÓN
                         $_SESSION['id'] = $f['id'];
+                        $_SESSION['rol'] = 1;
                         $_SESSION['autenticado'] = "SI";
 
                         echo '<script>alert("Bievenido ' . $rolTexto . ' ' . $f['nombre'] . '")</script>';
-                        echo '<script>location.href="../views/clientDashboard.html"</script>';
+                        echo '<script>location.href="../views/clientDashboard.php"</script>';
                     } else {
                         echo '<script>alert("La contraseña ingresada no es la correcta")</script>';
-                        echo '<script>location.href="../views/login.html"</script>';
+                        echo '<script>location.href="../views/login.php"</script>';
                     }
                 } else {
                     echo '<script>alert("El correo ingresado no es el correcto")</script>';
-                    echo '<script>location.href="../views/login.html"</script>';
+                    echo '<script>location.href="../views/login.php"</script>';
                 }
 
                 break;
@@ -57,24 +58,25 @@ class Login
                 if ($f = $resultado2->fetch()) {
 
                     // VALIDAMOS LA CLAVE 
-                    if ($f['clave'] == $clave) {
+                    if (password_verify($clave, $f['clave'])) {
 
                         // SE INICIA SESIÓN
                         session_start();
 
                         //SE CREAN VARIABLES GLOBALES O DE SESIÓN
                         $_SESSION['id'] = $f['id'];
+                        $_SESSION['rol'] = 2;
                         $_SESSION['autenticado'] = "SI";
 
                         echo '<script>alert("Bievenida ' . $rolTexto . ' ' . $f['nombre'] . '")</script>';
                         echo '<script>location.href="../views/conDashboard.php"</script>';
                     } else {
                         echo '<script>alert("La contraseña ingresada no es la correcta")</script>';
-                        echo '<script>location.href="../views/login.html"</script>';
+                        echo '<script>location.href="../views/login.php"</script>';
                     }
                 } else {
                     echo '<script>alert("El correo ingresado no es el correcto")</script>';
-                    echo '<script>location.href="../views/login.html"</script>';
+                    echo '<script>location.href="../views/login.php"</script>';
                 }
                 break;
         }

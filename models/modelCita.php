@@ -81,6 +81,9 @@ class Cita {
                 break;
             
             case 'RECHAZADA':
+                $eliminarCita = "DELETE FROM citas WHERE id = $id_cita";
+                $resultado2 = $conexion->prepare($eliminarCita);
+                $resultado2->execute();
                 echo '<script>alert("Cita Rechazada Correctamente")</script>';
                 break;
         }

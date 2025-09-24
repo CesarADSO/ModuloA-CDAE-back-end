@@ -25,6 +25,9 @@ $ruta_foto = $directorio . $nombreUnico;
 
 $moverArchivo = move_uploaded_file($_FILES['foto']['tmp_name'], $ruta_foto);
 
+// ENCRIPTAMOS LA CONTRASEÑA ANTES DE ENVIARLA AL MODELO
+$clave = password_hash($clave, PASSWORD_DEFAULT);
+
 // INSTANCIAMOS UNA CLASE
 
 $objetoUsuario = new Usuario();

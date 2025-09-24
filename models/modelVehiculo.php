@@ -30,7 +30,7 @@ class Vehiculo
 
         // DEFINIMOS EN UNA VARIABLE LA CONSULTA SQL A EJECUTAR
 
-        $consultar = "SELECT * FROM vehiculos";
+        $consultar = "SELECT * FROM vehiculos ORDER BY id DESC";
 
         // PREPARAMOS LA ACCIÓN A EJECUTAR Y LA EJECUTAMOS 
         $resultado = $conexion->prepare($consultar);
@@ -110,7 +110,7 @@ class Vehiculo
 
         // DEFINIMOS EN UNA VARIABLE LA CONSULTA SQL A EJECUTAR
 
-        $consultar = "SELECT vehiculos.*, concesionarias.nombre, concesionarias.imagen_logo FROM vehiculos INNER JOIN concesionarias ON vehiculos.concesionaria_id = concesionarias.id ";
+        $consultar = "SELECT vehiculos.*, concesionarias.nombre, concesionarias.imagen_logo FROM vehiculos INNER JOIN concesionarias ON vehiculos.concesionaria_id = concesionarias.id ORDER BY vehiculos.id DESC";
 
         // PREPARAMOS LA ACCIÓN A EJECUTAR Y LA EJECUTAMOS 
         $resultado = $conexion->prepare($consultar);

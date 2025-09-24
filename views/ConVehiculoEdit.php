@@ -3,7 +3,7 @@
 require_once("../models/conexion.php");
 require_once("../models/modelVehiculo.php");
 require_once("../controllers/mostrarVehiculos.php");
-require_once("../controllers/seguridad.php");
+require_once("../controllers/seguridadConcesionaria.php");
 
 
 
@@ -26,7 +26,7 @@ require_once("../controllers/seguridad.php");
         <header>
             <h2>Modificar Vehículo</h2>
             <a href="ConVehiculos.php" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         
             

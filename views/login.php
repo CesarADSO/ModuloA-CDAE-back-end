@@ -10,7 +10,7 @@
 <body>
     <main class="login log" id="home">
         <div class="cont-new-lg">
-            <a href="index.html"><img src="../assets/imgs/logo.png" class="logo" alt=""></a>
+            <a href="index.php"><img src="../assets/imgs/logo.png" class="logo" alt=""></a>
             <h2>INICIAR SESIÓN</h2>
             <p>Selecciona tu rol, e ingresa tu correo electrónico y contraseña.</p>
             <form action="../controllers/iniciarSesion.php" method="post">

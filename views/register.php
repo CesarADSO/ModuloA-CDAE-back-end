@@ -12,7 +12,7 @@
 <body>
     <main class="login register" id="home">
         <div class="cont-new-register">
-        <a href="index.html"><img src="../assets/imgs/logo.png" class="logo" alt=""></a>
+        <a href="index.php"><img src="../assets/imgs/logo.png" class="logo" alt=""></a>
         <h2>REGISTRARSE</h2>
         <p>Ingresa Tus Datos y Crea una Cuenta <br> Recuerda elegir tu rol.</p> <br>
         <form action="../controllers/registerUser.php" method="post" enctype="multipart/form-data">

@@ -19,9 +19,9 @@ function cargarVehiculos()
                         <img src="' . $f['imagen_destacada'] . '" width= 100px alt="Imagen de vehiculo">
                     </figure>
                     <div class="info">
-                        <h3>' . $f['marca'] . '</h3>
-                        <h4>' . $f['precio'] . '</h4>
-                        <p>' . $f['ciudad'] . ' - ' . $f['kilometraje'] . '</p>
+                        <h3>' . $f['marca'] . ' - '.$f['modelo'].'</h3>
+                        <h4>$ ' . $f['precio'] . '</h4>
+                        <p>' . $f['ciudad'] . ' - ' . $f['kilometraje'] . ' Km</p>
                     </div>
                     <div class="controls">
                         
@@ -88,8 +88,8 @@ function cargarVehiculosCliente () {
                 <div class="info-card">
                     <img src="'.$f['imagen_logo'].'" alt="">                    
                     <h2>'.$f['marca'].' - '.$f['modelo'].'</h2>
-                    <h2>'.$f['precio'].'</h2>
-                    <p>Año: '.$f['anio'].' - '.$f['kilometraje'].' km</p>
+                    <h2> $ '.$f['precio'].'</h2>
+                    <p>Año: '.$f['anio'].' -    '.$f['kilometraje'].' km</p>
                     <p class="direccion">'.$f['ciudad'].' - '.$f['nombre'].'</p>
                     <a href="ClientShowVehiculo.php?idVehiculo='.$f['id'].'">Ver Más</a>
                 </div>

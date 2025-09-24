@@ -21,7 +21,7 @@
                     </figure>
                     <div class="info">
                         <h3>'.$f['marca'].' - '.$f['modelo'].'</h3>                        
-                        <p>'.$f['ciudad'].' - '.$f['precio'].'</p>
+                        <p>'.$f['ciudad'].' - $ '.$f['precio'].'</p>
                         <p>'.$f['nombre_usuario'].'</p>
                         <p>'.$f['fecha'].' - '.$f['hora'].'</p>
                     </div>

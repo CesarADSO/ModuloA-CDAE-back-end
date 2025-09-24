@@ -13,8 +13,8 @@
     <main class="dashboard solicitudes concesionaria">
         <header>
             <h2>Administrar Solicitudes</h2>
-            <a href="ConDashboard.html" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="ConDashboard.php" class="back"></a>
+            <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         <table>
             <tr>

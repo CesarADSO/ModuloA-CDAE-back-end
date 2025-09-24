@@ -26,6 +26,6 @@ class Usuario
         }
 
         echo '<script>alert("Registro Exitoso")</script>';
-        echo '<script>location.href="../views/index.html"</script>';
+        echo '<script>location.href="../views/index.php"</script>';
     }
 };

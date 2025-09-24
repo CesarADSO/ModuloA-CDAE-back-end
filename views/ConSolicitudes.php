@@ -4,6 +4,7 @@
 require_once("../models/conexion.php");
 require_once("../models/modelCita.php");
 require_once("../controllers/mostrarCitas.php");
+require_once("../controllers/seguridadConcesionaria.php");
 
 
 ?>
@@ -27,7 +28,7 @@ require_once("../controllers/mostrarCitas.php");
         <header>
             <h2>Administrar Solicitudes</h2>
             <a href="ConDashboard.php" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         <table>
             <?php

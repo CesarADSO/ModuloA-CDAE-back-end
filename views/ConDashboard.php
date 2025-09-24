@@ -1,7 +1,7 @@
 
 <?php
 
-require_once("../controllers/seguridad.php");
+require_once("../controllers/seguridadConcesionaria.php");
 
 
 ?>

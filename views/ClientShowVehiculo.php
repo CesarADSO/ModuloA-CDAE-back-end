@@ -4,6 +4,7 @@
 require_once("../models/conexion.php");
 require_once("../models/modelVehiculo.php");
 require_once("../controllers/mostrarVehiculos.php");
+require_once("../controllers/seguridadCliente.php");
 
 
 
@@ -26,7 +27,7 @@ require_once("../controllers/mostrarVehiculos.php");
         <header>
             <h2>Consultar Vehículo</h2>
             <a href="ClientDashboard.php" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         <?php
 

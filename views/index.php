@@ -15,8 +15,8 @@
         <div class="cont-new">
             <img src="../assets/imgs/logo.png" class="logo" alt="">
             <p>Compra o vende tu vehículo de forma <br> fácil y segura en AutoMarket.</p>
-            <a class="btn-home" href="register.html">Registrarme</a>
-            <a class="btn-home" href="login.html">Iniciar Sesión</a>
+            <a class="btn-home" href="register.php">Registrarme</a>
+            <a class="btn-home" href="login.php">Iniciar Sesión</a>
         </div>
     </main>
 </body>

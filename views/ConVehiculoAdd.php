@@ -1,3 +1,14 @@
+<?php
+
+// IMPORTAMOS LAS DEPENDENCIAS NECESARIAS
+require_once("../controllers/seguridadConcesionaria.php");
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +25,7 @@
         <header>
             <h2>Registrar Vehículo</h2>
             <a href="ConVehiculos.php" class="back"></a>
-            <a href="index.html" class="close"></a>
+            <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         <form action="../controllers/agregarVehiculo.php" method="post" enctype="multipart/form-data">
             
