@@ -171,12 +171,13 @@ function cargarVehiculoCliente()
                 <hr>
                 <br>
                 <h3 class="datos-c">AGENDAR CITA:</h3>
-                <form action="">
+                <form action="../controllers/registrarCita.php" method="post">
+                    <input type="hidden" name="idVehiculo" class="time" value="'.$f['id'].'">
                     <p>Fecha:</p>
-                    <input type="date" class="time">
+                    <input type="date" name="fecha" class="time">
                     <p>Hora</p>
-                    <input type="time" class="time" >
-                    <button class="btn-home">Agendar</button>
+                    <input type="time" name="hora" class="time" >
+                    <button class="btn-home" type="submit">Agendar</button>
                 </form>
 
             </div>
