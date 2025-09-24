@@ -1,5 +1,12 @@
 
+<?php
+// IMPORTAMOS LAS DEPENDENCIAS NECESARIAS
+require_once("../models/conexion.php");
+require_once("../models/modelCita.php");
+require_once("../controllers/mostrarCitas.php");
 
+
+?>
 
 
 
@@ -23,7 +30,11 @@
             <a href="index.html" class="close"></a>
         </header>
 
+        <?php
         
+            cargarCita();
+       
+        ?>
 
 
     </main>
