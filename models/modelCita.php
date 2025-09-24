@@ -33,6 +33,8 @@ class Cita {
         $resultado = $conexion->prepare($consultar);
         $resultado->execute();
 
+        $f= [];
+
         //AGREGAMOS UN BUCLE WHILE PARA PODER CONVERTIR ESA CADENA DE INFORMACION EN UN ARREGLO DE DATOS QUE PODAMOS MANIPULAR GRACIAS AL FETCH
         while ($dato = $resultado->fetch()) {
             $f[] = $dato;

@@ -36,6 +36,10 @@ class Vehiculo
         $resultado = $conexion->prepare($consultar);
         $resultado->execute();
 
+
+        // INICIALIZAMOS F COMO UN ARREGLO VACIO PARA EVITAR EL WARNING AL NO TENER VEHICULOS REGISTRADOS
+        $f = [];
+
         //AGREGAMOS UN BUCLE WHILE PARA PODER CONVERTIR ESA CADENA DE INFORMACION EN UN ARREGLO DE DATOS QUE PODAMOS MANIPULAR GRACIAS AL FETCH
         while ($dato = $resultado->fetch()) {
             $f[] = $dato;
@@ -115,6 +119,9 @@ class Vehiculo
         // PREPARAMOS LA ACCIÓN A EJECUTAR Y LA EJECUTAMOS 
         $resultado = $conexion->prepare($consultar);
         $resultado->execute();
+
+        // INICIALIZAMOS F COMO UN ARREGLO VACIO PARA EVITAR EL WARNING AL NO TENER VEHICULOS REGISTRADOS
+        $f= [];
 
         //AGREGAMOS UN BUCLE WHILE PARA PODER CONVERTIR ESA CADENA DE INFORMACION EN UN ARREGLO DE DATOS QUE PODAMOS MANIPULAR GRACIAS AL FETCH
         while ($dato = $resultado->fetch()) {

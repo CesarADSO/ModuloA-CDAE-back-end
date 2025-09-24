@@ -7,8 +7,8 @@ function cargarVehiculos()
     $datos = $vehiculos->consultarVehiculos();
 
     //VERIFICAMOS QUE ESTA VARIABLE $datos POSEA INFORMACION A TRAVES DE UN IF
-    if (!isset($datos)) {
-        echo "<h2>NO HAY VEHICULOS REGISTRADOS</h2>";
+    if (empty($datos)) {
+        echo "<h2 style='position:absolute; top:200px; left:25px;'>NO HAY VEHICULOS REGISTRADOS</h2>";
     } else {
         foreach ($datos as $f) {
             //CONCATENAMOS CON EL '..'
@@ -77,7 +77,7 @@ function cargarVehiculosCliente () {
     $datos = $vehiculos->consultarVehiculosCliente();
 
     //VERIFICAMOS QUE ESTA VARIABLE $datos POSEA INFORMACION A TRAVES DE UN IF
-    if (!isset($datos)) {
+    if (empty($datos)) {
         echo "<h2>NO HAY VEHICULOS REGISTRADOS</h2>";
     } else {
         foreach ($datos as $f) {
