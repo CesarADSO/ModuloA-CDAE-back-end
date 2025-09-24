@@ -26,7 +26,7 @@ require_once("../controllers/seguridad.php");
             <a href="../controllers/cerrarSesion.php" class="close"></a>
         </header>
         <a href="conVehiculos.php" class="btn-home inmuebles">Gestionar Vehículos</a>
-        <a href="ConSolicitudes.html" class="btn-home solicitudes">Ver Solicitudes</a>
+        <a href="ConSolicitudes.php" class="btn-home solicitudes">Ver Solicitudes</a>
         
     </main>
 </body>
