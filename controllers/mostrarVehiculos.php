@@ -26,7 +26,7 @@ function cargarVehiculos()
                     <div class="controls">
                         
                         <a href="conVehiculoEdit.php?idVehiculo=' . $f['id'] . '" class="edit"></a>
-                        <a href="../controllers/eliminarVehiculo.php?idVehiculo=' . $f['id'] . '" class="delete"></a>
+                        <a href="../controllers/eliminarVehiculo.php?idVehiculo=' . $f['id'] . '" class="delete" onclick="return confirm(\'¿Estás seguro de eliminar el vehículo?\');"></a>
                     </div>
                 </td>
             </tr>
@@ -67,6 +67,49 @@ function cargarVehiculo()
             <button class="btn-home" type="submit">Modificar</button>
 
         </form>
+        ';
+    }
+}
+
+function cargarVehiculosCliente () {
+    // CREAMOS EL OBJETO DE NUESTRA CLASE PRINCIPAL VEHICULOS
+    $vehiculos = new Vehiculo();
+    $datos = $vehiculos->consultarVehiculosCliente();
+
+    //VERIFICAMOS QUE ESTA VARIABLE $datos POSEA INFORMACION A TRAVES DE UN IF
+    if (!isset($datos)) {
+        echo "<h2>NO HAY VEHICULOS REGISTRADOS</h2>";
+    } else {
+        foreach ($datos as $f) {
+            //CONCATENAMOS CON EL '..'
+            echo '
+                <div class="card-vehiculo">
+                <img src="'.$f['imagen_destacada'].'"  alt="">
+                <div class="info-card">
+                    <img src="'.$f['imagen_logo'].'" alt="">                    
+                    <h2>'.$f['marca'].' - '.$f['modelo'].'</h2>
+                    <h2>'.$f['precio'].'</h2>
+                    <p>Año: '.$f['anio'].' - '.$f['kilometraje'].' km</p>
+                    <p class="direccion">'.$f['ciudad'].' - '.$f['nombre'].'</p>
+                    <a href="ClientShowVehiculo.php?idVehiculo="'.$f['id'].'">Ver Más</a>
+                </div>
+            </div>
+                
+                ';
+        }
+    }
+}
+
+function cargarVehiculoCliente()
+{
+    // CAPTURAMOS LA PK ENVIADA POR LA URL A TRAVÉS DEL METHOD GET
+    $id_vh = $_GET['idVehiculo'];
+    $objetoVehiculo = new Vehiculo;
+    $resultado = $objetoVehiculo->consultarVehiculo($id_vh);
+
+    foreach ($resultado as $f) {
+        echo '
+        
         ';
     }
 }

@@ -101,4 +101,26 @@ class Vehiculo
         echo '<script>alert("Vehiculo Actualizado Correctamente")</script>';
         echo '<script>location.href="../views/conVehiculos.php"</script>';
     }
+
+    public function consultarVehiculosCliente()
+    {
+        // CREAMOS EL OBJETO DE LA CONEXIÓN
+        $objetoConexion = new Conexion();
+        $conexion = $objetoConexion->get_conexion();
+
+        // DEFINIMOS EN UNA VARIABLE LA CONSULTA SQL A EJECUTAR
+
+        $consultar = "SELECT vehiculos.*, concesionarias.nombre, concesionarias.imagen_logo FROM vehiculos INNER JOIN concesionarias ON vehiculos.concesionaria_id = concesionarias.id ";
+
+        // PREPARAMOS LA ACCIÓN A EJECUTAR Y LA EJECUTAMOS 
+        $resultado = $conexion->prepare($consultar);
+        $resultado->execute();
+
+        //AGREGAMOS UN BUCLE WHILE PARA PODER CONVERTIR ESA CADENA DE INFORMACION EN UN ARREGLO DE DATOS QUE PODAMOS MANIPULAR GRACIAS AL FETCH
+        while ($dato = $resultado->fetch()) {
+            $f[] = $dato;
+        }
+        // RETORNAMOS $f
+        return $f;
+    }
 };
