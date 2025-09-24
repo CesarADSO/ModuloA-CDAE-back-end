@@ -91,7 +91,7 @@ function cargarVehiculosCliente () {
                     <h2>'.$f['precio'].'</h2>
                     <p>Año: '.$f['anio'].' - '.$f['kilometraje'].' km</p>
                     <p class="direccion">'.$f['ciudad'].' - '.$f['nombre'].'</p>
-                    <a href="ClientShowVehiculo.php?idVehiculo="'.$f['id'].'">Ver Más</a>
+                    <a href="ClientShowVehiculo.php?idVehiculo='.$f['id'].'">Ver Más</a>
                 </div>
             </div>
                 
@@ -105,11 +105,82 @@ function cargarVehiculoCliente()
     // CAPTURAMOS LA PK ENVIADA POR LA URL A TRAVÉS DEL METHOD GET
     $id_vh = $_GET['idVehiculo'];
     $objetoVehiculo = new Vehiculo;
-    $resultado = $objetoVehiculo->consultarVehiculo($id_vh);
+    $resultado = $objetoVehiculo->consultarVehiculoCliente($id_vh);
 
     foreach ($resultado as $f) {
         echo '
-        
+            <figure class="photo-preview slide">
+            <img src="'.$f['imagen_destacada'].'" alt="">
+            <img src="'.$f['imagen_apoyo_1'].'" alt="">
+            <img src="'.$f['imagen_apoyo_2'].'" alt="">
+        </figure>
+        <div class="cont-details">
+            <div class="cont-veh">
+                <article class="info-name" style="display:none;">
+                    <div class="data">
+                        <div class="title">id:</div>
+                        <p>'.$f['id'].'</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Concesionario:</div>
+                        <p>'.$f['nombre_concesionaria'].'</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Marca:</div>
+                        <p>'.$f['marca'].'</p>
+                    </div>
+                </article>
+
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Modelo:</div>
+                        <p>'.$f['modelo'].'</p>
+                    </div>
+                </article>
+
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Precio:</div>
+                        <p>'.$f['precio'].'</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Año:</div>
+                        <p>'.$f['anio'].'</p>
+                    </div>
+                </article>
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Ciudad:</div>
+                        <p>'.$f['ciudad'].'</p>
+                    </div>
+                </article>
+
+                <article class="info-name">
+                    <div class="data">
+                        <div class="title">Kilometraje:</div>
+                        <p> '.$f['kilometraje'].' Km</p>
+                    </div>
+                </article>
+                <br>
+                <hr>
+                <br>
+                <h3 class="datos-c">AGENDAR CITA:</h3>
+                <form action="">
+                    <p>Fecha:</p>
+                    <input type="date" class="time">
+                    <p>Hora</p>
+                    <input type="time" class="time" >
+                    <button class="btn-home">Agendar</button>
+                </form>
+
+            </div>
+        </div>
         ';
     }
 }
